@@ -268,6 +268,11 @@ set (S_TARGETS
     occlusion_query pipeline_cache pipeline_derivative push_descriptors
     immutable_sampler push_constants draw_subpasses secondary_command_buffer
     spirv_assembly spirv_specialization memory_barriers validation_cache vulkan_1_1_flexible)
+	
+foreach (sample ${S_TARGETS})
+    install(TARGETS ${sample} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+endforeach(sample)
+
 sampleWithSingleFile()
 
 if (NOT ANDROID)
